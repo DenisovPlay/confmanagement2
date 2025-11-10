@@ -15,10 +15,6 @@ python3 main.py --package "A" --repo "test_graph.txt" --mode "test" --version "1
 """
 
 def parse_test_graph(file_path):
-    """Парсит тестовый граф из файла в формате:
-    A: B C D
-    B: E F
-    """
     graph = {}
     try:
         with open(file_path, 'r') as f:
@@ -37,7 +33,6 @@ def parse_test_graph(file_path):
         sys.exit(1)
 
 def fetch_pom_dependencies(group_id, artifact_id, version, repo_url):
-    """Получает прямые зависимости из POM-файла"""
     try:
         group_path = group_id.replace('.', '/')
         repo_url = repo_url.rstrip('/')
